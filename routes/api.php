@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoanApplicationController;
 use App\Http\Controllers\LoanApplicationFormValidationController;
 
 /*
@@ -16,3 +17,4 @@ use App\Http\Controllers\LoanApplicationFormValidationController;
 */
 
 Route::post('loan-application/validate', LoanApplicationFormValidationController::class);
+Route::post('loan-application', LoanApplicationController::class);

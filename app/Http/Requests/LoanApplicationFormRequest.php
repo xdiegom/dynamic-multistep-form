@@ -5,7 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Http\FormRequest;
 
-class LoanApplicationValidationFormRequest extends FormRequest
+class LoanApplicationFormRequest extends FormRequest
 {
     /**
      * Rules that will be apply to the request
@@ -47,7 +47,7 @@ class LoanApplicationValidationFormRequest extends FormRequest
     protected function prepareForValidation()
     {
         $requestKeys = array_keys($this->all());
-        $this->dataRules = DB::table('input_fields_validations')->whereIn('request_key', $requestKeys)->get();
+        $this->dataRules = DB::table('input_fields_validations')->get();
 
         $this->mapDataRules();
     }
